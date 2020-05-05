@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 // Any route that goes to slash,
-// Have the router object inside of routes
+// Have the router object inside of routes0
 // handle the routing for us
 app.use(routes);
 

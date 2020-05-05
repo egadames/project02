@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const todoRoutes = require('./todoRoutes/todoRoutes');
+const flashcardRoutes = require('./flashCardRoutes');
 
 // /api prepended to everyRoute inside of here
-router.use('/todos', todoRoutes);
+router.use('/flashcard', flashcardRoutes);
 
 module.exports = router;
