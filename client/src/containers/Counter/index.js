@@ -22,7 +22,7 @@ class Counter extends Component {
         <button onClick={this.handleIncrement}>Increment</button>
         <button onClick={this.handleDecrement}>Decrement</button>
         <button onClick={this.props.history.goBack}>Go Back</button>
-        <button onClick={ () => this.props.history.push('/todos') }>Go to todos</button>
+        <button onClick={ () => this.props.history.push('/flashcard') }>Go to todos</button>
       </div>
     );
   }
