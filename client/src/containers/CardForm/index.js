@@ -7,13 +7,14 @@ import RenderTodoList from '../../components/RenderTodoList';
 class TodoForm extends Component {
   state = {
     todos: [],
+    QuestionInput: ''
     todoInput: ''
   }
 
   async componentDidMount() {
     console.log("Inside componentDidMount");
     try {
-      const { data } = await axios.get('/api/todos');
+      const { data } = await axios.get('/api/flashcard');
       this.setState({ todos: data });
     } catch (e) {
       console.log(e);
@@ -59,10 +60,10 @@ class TodoForm extends Component {
     console.log(this.props);
     return (
       <div>
-        <RenderTodoList
+        {/* <RenderTodoList
           items={this.state.todos}
           handleUpdateCompletedTodo={this.handleUpdateCompletedTodo}
-          handleDelete={this.handleDeleteTodo}/>
+          handleDelete={this.handleDeleteTodo}/> */}
         <form>
           <input
             name="todoInput"
