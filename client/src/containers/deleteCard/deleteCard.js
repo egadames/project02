@@ -28,3 +28,4 @@ const Flashcard = ({ flashcards, remove }) => (
   );
 
 export default Flashcard;
+
