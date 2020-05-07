@@ -10,7 +10,7 @@ class GetAll extends Component {
   async componentDidMount() {
     console.log("Inside componentDidMount");
     try {
-      const { data } = await axios.get('/api/flashcard');
+      const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
       this.setState({ flashCard: data });
     } catch (e) {
       console.log(e);
