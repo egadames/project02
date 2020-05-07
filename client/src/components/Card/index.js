@@ -28,7 +28,7 @@ const CardForm = (props) => {
           <Button 
           style = {{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px'}} 
           as={Link}
-          to={`/flashcard/delete/${props.id}`}
+          to={`/delete/${props.id}`}
           >Delete Card</Button>
         </span>
     </div>

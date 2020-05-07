@@ -7,7 +7,7 @@ import ViewAll from '../../containers/ViewAll';
 import Navbar from '../Navbar';
 import UpdateByID from '../../containers/UpdateByID';
 import NewFlashCard from '../../containers/NewFlashCard';
-import deleteCard from '../deleteCard';
+import DeleteCard from '../../containers/DeleteCard';
 
 const App = () => (
 <Router>
@@ -18,7 +18,7 @@ const App = () => (
 <Route exact path='/flashcard' component={ViewAll}/>
 <Route exact path='/flashcard/add' component={NewFlashCard}/>
 <Route exact path='/flashcard/update/:flashId' component={UpdateByID}/>
-<Route exact path='/flashcard/delete/:flashId' component={deleteCard}/>
+<Route exact path='/delete/:flashId' component={DeleteCard}/>
 <Route exact path='/flashcard/:flashId' component={FlashCardByID}/>
 </Switch>
 

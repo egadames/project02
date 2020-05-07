@@ -6,7 +6,7 @@ import { Form } from 'semantic-ui-react';
 
 class DeleteCard extends Component {
   state = {
-    flashCard: []
+    flashCard: [],
   }
 
   async componentDidMount() {
@@ -44,8 +44,6 @@ class DeleteCard extends Component {
         key = {this.state.flashCard.id}
         question = {this.state.flashCard.question}
         answer = {this.state.flashCard.answer}
-        // name = ""
-        // value = {this.state.questionText}
         remove = {this.remove}
       />
     );
