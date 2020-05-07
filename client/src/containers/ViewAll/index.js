@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Card from '../../components/Card'
-import Wrapper from '../../components/Wrapper'
+import Wrapper from '../../components/Wrapper';
 
 class GetAll extends Component {
   state = {
@@ -17,6 +17,7 @@ class GetAll extends Component {
     }
   }  
   renderCards = () => {
+    
     if (this.state.flashCard.length === 0) {
       return <p>You're a loner</p>
     } else {
@@ -24,11 +25,10 @@ class GetAll extends Component {
         return <Card
           id = {card.id}
           key = {card.id}
-          name = {card.name}
           question = {card.question}
           answer = {card.answer}
-          // handleDelete = {this.handleDeleteFriend}
           />
+        
       })
     }
   }

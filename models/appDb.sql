@@ -14,3 +14,5 @@ CREATE TABLE flashcard (
     isCorrect BOOLEAN DEFAULT false,
     PRIMARY KEY(id)
 );
+
+INSERT INTO flashcard (question, answer) VALUES("What day is it?", "Wednesday");

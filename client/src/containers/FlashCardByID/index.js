@@ -1,41 +1,44 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Card from '../../components/Card/index'
-import Wrapper from '../../components/Wrapper'
+import Card from '../../components/Card/index';
+import Wrapper from '../../components/Wrapper';
 
 class FlashCardByID extends Component {
   state = {
-    flashCard: []
+    flashCard: {
+      question: '',
+      answer: ''
+    }
   }
   async componentDidMount() {
     console.log("Inside componentDidMount");
     try {
-      const { data } = await axios.get('/api/flashcard');
+      const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
       this.setState({ flashCard: data });
     } catch (e) {
       console.log(e);
     }
   }  
-  renderCards = () => {
-    if (this.state.flashCard.length === 0) {
-      return <p>You're a loner</p>
-    } else {
-      return this.state.flashCard.map(card => {
-        return <Card
-          id = {card.id}
-          key = {card.id}
-          name = {card.name}
-          question = {card.question}
-          answer = {card.answer}
-          />
-      })
-    }
+
+  renderCard = (id) => {
+    return (
+      <Card
+        id = {this.state.flashCard.id}
+        buttonlink = 'flashcard/flashId'
+        question = {this.state.flashCard.question}
+        answer = {this.state.flashCard.answer}
+        // button1 = 'Homepage'
+        // button2 = "onClick = {() => props.handleDelete(props.id)}"
+      />
+    );
+
   }
   render() {
+    console.log(this.props.match.params.flashId);
     return (
       <Wrapper>
-        <h1 className="title">Friends List</h1>
-        { this.renderCards() }
+        {/* <h1 className="title">Friends List</h1> */}
+        { this.renderCard() }
       </Wrapper>
     );
   }
