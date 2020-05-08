@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NewCard from '../../components/NewCard/index';
+// import NewCard from '../../../public/NewCard/index';
+import { Link } from 'react-router-dom';
 import Wrapper from '../../components/Wrapper';
-import { Form } from 'semantic-ui-react';
+import { Form, Button, Icon } from 'semantic-ui-react';
 
 class NewFlashCard extends Component {
   state = {
@@ -24,39 +25,25 @@ class NewFlashCard extends Component {
     this.setState({ [name]: value });
   }
 
-  // handleadd = async () => {
-  //   try {
-  //     const { data: flashCard } = await axios.post(`/api/flashcard/`, {question: `${this.state.questionText}`, answer: `${this.state.answerText}`});
-  //     this.setState({ flashCard });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
 
-  handleAdd = async () => {
-    // event.preventDefault();
+  handleAdd = async (event) => {
+
     try {
       const { data } = await axios.post('/api/flashcard', {question: `${this.state.questionText}`, answer: `${this.state.answerText}`});
       const flashCard = [...this.state.flashCard, data];
-      console.log(flashCard)
-      // this.setState({ todos, todoInput: '' });
+      console.log(flashCard[17].id);
+
     } catch (e) {
       console.log(e);
     }
   }
 
-  renderNewCard = () => {
+  renderForm = () => {
     return (
       <div>
-        <NewCard
-          id = {''}
-          question = {''}
-          answer = {''}
-          handleAdd={this.handleAdd}
-        />
         <Form>
           <Form.Field>
-            <label>Updated Question</label>
+            <label>Enter New Question</label>
             <input 
             style = {{height: '20px'}}
             name = "questionText"
@@ -67,7 +54,7 @@ class NewFlashCard extends Component {
         </Form>
         <Form>
           <Form.Field >
-            <label>Updated Answer</label>
+            <label>Enter New Answer</label>
             <input 
             style = {{height: '20px'}}
             name = "answerText"
@@ -76,18 +63,39 @@ class NewFlashCard extends Component {
             />
           </Form.Field>
       </Form>
+      <span>
+      <Link to = '/flashcard'>
+      <Button animated onClick={(e) => this.handleAdd(e)}>
+      <Button.Content visible>Submit</Button.Content>
+      <Button.Content hidden>
+        <Icon name='checkmark' />
+      </Button.Content>
+      </Button>
+      </Link>
+      <Link to = '/'> 
+      <Button animated >
+      <Button.Content visible>Cancel</Button.Content>
+      <Button.Content hidden>
+        <Icon name='x' />
+      </Button.Content>
+      </Button>
+      </Link>
+      </span>
     </div>
   );
 }
+
   render() {
     return (
       // if()
       <Wrapper>
         {/* <h1 className="title">Friends List</h1> */}
-        { this.renderNewCard() }
+        { this.renderForm() }
       </Wrapper>
     );
   }
 }
+
+
 
 export default NewFlashCard;

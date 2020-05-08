@@ -12,23 +12,22 @@ class GetAll extends Component {
     try {
       const { data } = await axios.get('/api/flashcard');
       this.setState({ flashCard: data });
+      localStorage.setItem('flashCardId', data[0].id);
     } catch (e) {
       console.log(e);
     }
   }  
   renderCards = () => {
-    
     if (this.state.flashCard.length === 0) {
       return <p>You're a loner</p>
     } else {
       return this.state.flashCard.map(card => {
-        return <Card
+        return <Card.CardForm
           id = {card.id}
           key = {card.id}
           question = {card.question}
           answer = {card.answer}
           />
-        
       })
     }
   }
