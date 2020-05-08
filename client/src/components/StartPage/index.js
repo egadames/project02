@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button, Grid } from 'semantic-ui-react';
+import { Button, Grid} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
+import './style.css';
 
 const RenderStartPage = (props) => {
   return(
@@ -21,17 +22,17 @@ const RenderStartPage = (props) => {
       <Grid.Column 
         width={4}
         stretched = {true}>
-        <Link to='/flashcard'><Button size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh'}}> View All Cards</Button></Link>
+        <Button as={Link} to='/flashcard' size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh'}}> View All Cards</Button>
       </Grid.Column>
       <Grid.Column 
         width={4}
         stretched = {true}>
-        <Link to='/flashcard/add'><Button size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh'}}> Add a Flash Card</Button></Link>
+        <Button as={Link} to='/add' size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh', }}> Add a Flash Card</Button>        
       </Grid.Column>
       <Grid.Column 
         width={4}
         stretched = {true}>
-        <Button size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh'}} > Review Quiz</Button>
+        <Button as={Link} to={`/review`} size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh'}} > Review Quiz</Button>
       </Grid.Column>
     </Grid.Row>
   </Grid>

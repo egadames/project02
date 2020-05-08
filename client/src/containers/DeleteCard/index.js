@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Card from '../../components/deleteCard';
+import Card from '../../components/Card';
 import Wrapper from '../../components/Wrapper';
-import { Form } from 'semantic-ui-react';
 
 class DeleteCard extends Component {
   state = {
@@ -20,14 +19,6 @@ class DeleteCard extends Component {
     }
   }  
 
-  // handleInputChange = event => {
-  //   console.log(event)
-  //   const { value, name } = event.target;
-  //   console.log(value)
-  //   console.log(name)
-  //   this.setState({ [name]: value });
-  // }
-
   remove = async id => {
     try {
       const { data: flashCard } = await axios.delete(`/api/flashcard/${this.props.match.params.flashId}`);
@@ -39,9 +30,9 @@ class DeleteCard extends Component {
 
   renderCard = (id) => {
     return (
-      <Card
+      <Card.deleteCard
         id = {this.state.flashCard.id}
-        key = {this.state.flashCard.id}
+        // key = {this.state.flashCard.id}
         question = {this.state.flashCard.question}
         answer = {this.state.flashCard.answer}
         remove = {this.remove}
