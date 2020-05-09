@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-// import { Link, Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import axios from 'axios';
-// import Card from '../../components/Card'
+import Card from '../../components/Card'
 import Wrapper from '../../components/Wrapper';
 import FlashCard from '../FlashCardByID';
 
-class Review extends Component {
+class GetAll extends Component {
     state = {
       flashCard: [],
       currentIndex: 0,
@@ -22,15 +22,15 @@ class Review extends Component {
     }
   }  
 
-  // async Reload() {
-  //   console.log("Inside componentDidMount");
-  //   try {
-  //     const { data } = await axios.get('/api/flashcard');
-  //     this.setState({ flashCard: data, currentIndex: data[0].id });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }  
+  async Reload() {
+    console.log("Inside componentDidMount");
+    try {
+      const { data } = await axios.get('/api/flashcard');
+      this.setState({ flashCard: data, currentIndex: data[0].id });
+    } catch (e) {
+      console.log(e);
+    }
+  }  
 
   handleNext = () => {
 
@@ -38,7 +38,7 @@ class Review extends Component {
   }
 
   handlePrevious = () => {
-    let { currentIndex, flashCard } = this.state;
+    let { currentIndex,currentCard, flashCard } = this.state;
     let newIndex = currentIndex - 1;
     if (newIndex < 0) {
       return;
@@ -60,4 +60,4 @@ class Review extends Component {
   }
 }
 
-export default Review;
+export default GetAll;

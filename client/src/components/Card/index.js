@@ -7,11 +7,18 @@ import Background from '../../asset/flashCardImg.jpg'
 const CardForm = (props) => {
   return (
     <Card style= {{ width: '473px', height: '284px', backgroundImage: `url(${Background})`}}>
-      <Card.Content header={`Flashcard # ${props.id}`} style ={{position: 'absolute', right: '27%'}}/>
-      <Card.Content description={`Question: ${props.question}`} style ={{position: 'absolute', top: '54px'}}/>
-      <Card.Content description={`Question: ${props.answer}`} style ={{position: 'absolute', top:'124px'}}/>
-      <Button as={Link}to={`/update/${props.id}`} content= {'Edit Card'} primary style={{position: 'absolute', bottom: '5px', left: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
-      <Button as={Link}to={`/delete/${props.id}`} content= {'Delete Card'} primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
+      <Card.Content header={`Flashcard # ${props.id}`} 
+      style ={{position: 'absolute', right: '27%'}}/>
+      <Card.Content description={`Question: ${props.question}`} 
+      style ={{position: 'absolute', top: '54px'}}/>
+      <Card.Content description={`Question: ${props.answer}`} 
+      style ={{position: 'absolute', top:'124px'}}/>
+      <Button as={Link}to={`/update/${props.id}`} content= {'Edit Card'} primary 
+      style={{position: 'absolute', bottom: '5px', left: '5%', 
+      width: '150px',height: '50px', lineHeight: 'normal'}}/>
+      <Button as={Link}to={`/delete/${props.id}`} content= {'Delete Card'} primary 
+      style={{position: 'absolute', bottom: '5px', right: '5%', 
+      width: '150px',height: '50px', lineHeight: 'normal'}}/>
     </Card>
   );
 }

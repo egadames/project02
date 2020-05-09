@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import Card from '../../components/Card/';
 import Wrapper from '../../components/Wrapper';
 
@@ -35,7 +35,7 @@ class FlashCardByID extends Component {
 
   renderCard = (id) => {
     return (
-      <Card
+      <Card.CardForm
         id = {this.props.flashCard.id}
         buttonlink = 'flashcard/flashId'
         question = {this.props.flashCard.question}
