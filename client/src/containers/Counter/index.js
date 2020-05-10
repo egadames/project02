@@ -23,6 +23,7 @@ class Counter extends Component {
         <button onClick={this.handleDecrement}>Decrement</button>
         <button onClick={this.props.history.goBack}>Go Back</button>
         <button onClick={ () => this.props.history.push('/flashcard') }>Go to todos</button>
+        <input style = {{border: 'solid black', position: 'absolute', bottom: '5px', left: '5%'}}> Answer:</input>
       </div>
     );
   }

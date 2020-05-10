@@ -10,15 +10,15 @@ class FlashCardByID extends Component {
       answer: ''
     }
   }
-  // async componentDidMount() {
-  //   console.log("Inside componentDidMount");
-  //   try {
-  //     const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
-  //     this.setState({ flashCard: data });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }  
+  async componentDidMount() {
+    console.log("Inside componentDidMount");
+    try {
+      const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
+      this.setState({ flashCard: data });
+    } catch (e) {
+      console.log(e);
+    }
+  }  
 
   // async componentDidUpdate(prevProps) {
   //   console.log('prevProps', prevProps);
@@ -32,12 +32,11 @@ class FlashCardByID extends Component {
   //     }
   //   }
   // }
-
+  
   renderCard = (id) => {
     return (
-      <Card.CardForm
+      <Card.quizCard
         id = {this.props.flashCard.id}
-        buttonlink = 'flashcard/flashId'
         question = {this.props.flashCard.question}
         answer = {this.props.flashCard.answer}
       />

@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
+import { Input, Form } from 'semantic-ui-react';
 import axios from 'axios';
 import Card from '../../components/Card'
 import Wrapper from '../../components/Wrapper';
 import FlashCard from '../FlashCardByID';
 
-class GetAll extends Component {
+class Quiz extends Component {
     state = {
       flashCard: [],
       currentIndex: 0,
-      currentCard: ''
+      currentCard: '',
+      totalCards: "",
+      correctCount: 0,
+      answerText: ''
     }
   
   async componentDidMount() {
     console.log("Inside componentDidMount");
     try {
       const { data } = await axios.get('/api/flashcard');
-      this.setState({ flashCard: data, currentIndex: 0, currentCard: data[0] });
+      this.setState({ flashCard: data, currentIndex: 0, currentCard: data[0], totalCards: data.length });
     } catch (e) {
       console.log(e);
     }
   }  
 
-  async Reload() {
-    console.log("Inside componentDidMount");
-    try {
-      const { data } = await axios.get('/api/flashcard');
-      this.setState({ flashCard: data, currentIndex: data[0].id });
-    } catch (e) {
-      console.log(e);
-    }
-  }  
+  finalScreen = () => {
+    let { currentIndex, currentCard, flashCard, totalCards } = this.state;
+  }
 
   handleNext = () => {
-
-    this.setState({currentIndex: this.state.currentIndex + 1, currentCard: this.state.flashCard[ this.state.currentIndex + 1 ] });
+    let { currentIndex, currentCard, flashCard, totalCards } = this.state;
+    let newIndex = currentIndex + 1;
+    console.log(totalCards)
+    if (newIndex > totalCards - 1) {
+      // handleLast();
+      return;
+    }
+    this.setState({currentIndex: newIndex, currentCard: flashCard[newIndex] });
   }
 
   handlePrevious = () => {
@@ -46,18 +50,32 @@ class GetAll extends Component {
     this.setState({currentIndex: newIndex, currentCard: flashCard[newIndex] });
   }
 
+  handleLast = () => {
+    let { totalCards, correctCount } = this.state;
+  }
+
   render() {
     return (
-      <Wrapper>
-        <title className="title">Flash Cards</title>
-        {/* { this.renderCards() } */}
+      <div>
         <button onClick={this.handlePrevious}>Previous</button>
-        {/* <Route exact path={`/review/:flashId`} component={FlashCard} /> */}
-        <FlashCard flashCard={this.state.currentCard}/>
+        <Wrapper>         
+          <FlashCard flashCard={this.state.currentCard}/>
+        </Wrapper>
+        <Form >
+      <Form.Field >
+        <label>Updated Answer</label>
+        <input 
+        style = {{height: '10px', border: 'solid black'}}
+        name = "answerText"
+        value = {this.state.answerText}
+        onChange = {this.handleInputChange}
+        />
+      </Form.Field>
+    </Form>
         <button onClick={this.handleNext}>Next</button>
-      </Wrapper>
+      </div>
     );
   }
 }
 
-export default GetAll;
+export default Quiz;

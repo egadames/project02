@@ -21,10 +21,7 @@ class UpdateByID extends Component {
     }
   }  
   handleInputChange = event => {
-    console.log(event)
     const { value, name } = event.target;
-    console.log(value)
-    console.log(name)
     this.setState({ [name]: value });
   }
 
@@ -45,7 +42,6 @@ class UpdateByID extends Component {
         question = {this.state.flashCard.question}
         answer = {this.state.flashCard.answer}
         onClicks = {this.handleUpdate}
-
       />
   <Form>
     <Form.Field>

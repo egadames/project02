@@ -25,14 +25,11 @@ class NewFlashCard extends Component {
     this.setState({ [name]: value });
   }
 
-
   handleAdd = async (event) => {
-
     try {
       const { data } = await axios.post('/api/flashcard', {question: `${this.state.questionText}`, answer: `${this.state.answerText}`});
       const flashCard = [...this.state.flashCard, data];
-      console.log(flashCard[17].id);
-
+      console.log(data)
     } catch (e) {
       console.log(e);
     }

@@ -12,7 +12,8 @@ class GetAll extends Component {
     try {
       const { data } = await axios.get('/api/flashcard');
       this.setState({ flashCard: data });
-      localStorage.setItem('flashCardId', data[0].id);
+
+      // localStorage.setItem('flashCardId', data[0].id);
     } catch (e) {
       console.log(e);
     }
