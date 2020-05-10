@@ -29,8 +29,8 @@ const editCard = (props) => {
       <Card.Content header={`Flashcard # ${props.id}`} style ={{position: 'absolute', right: '35%'}}/>
       <Card.Content description={`Question: ${props.question}`} style ={{position: 'absolute', top: '54px'}}/>
       <Card.Content description={`Answer: ${props.answer}`} style ={{position: 'absolute', top:'124px'}}/>
-      <Button onClick = {() => props.handleUpdate(props.id)} content= 'Confirm Changes' primary style={{position: 'absolute', bottom: '5px', left: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
-      <Button as={Link}to={`/`} content= 'Cancel Changes' primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
+      <Button as={Link}to={`/review`} content= 'Redo Quiz' primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
+      <Button as={Link}to={`/`} content= 'Finish' primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
     </Card>
   );
 }
@@ -56,6 +56,19 @@ const quizCard = (props) => {
       {/* <Card.Content description={`Answer: ${props.answer}`} style ={{position: 'absolute', top:'124px'}}/> */}
       {/* <Button onClick = {() => props.remove(props.id)} content= 'Delete Card' primary style={{position: 'absolute', bottom: '5px', left: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
       <Button as={Link}to={props.route2} onClick = {props.onClick2} content= 'Cancel Delete' primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/> */}
+    </Card>
+  );
+}
+
+const finalCard = (props) => {
+  return (
+    <Card style= {{ width: '473px', height: '284px', backgroundImage: `url(${Background})`}}>
+      <Card.Content header={`Results of the Quiz`} style ={{position: 'absolute', right: '35%'}}/>
+      <Card.Content description={`Total Number of Questions: ${props.total}`} style ={{position: 'absolute', top: '54px'}}/>
+      <Card.Content description={`Number Correct: ${props.correct}`} style ={{position: 'absolute', top:'124px'}}/>
+      <Card.Content description={`Your Grade: ${props.grade}`} style ={{position: 'absolute', top:'124px'}}/>
+      <Button onClick = {() => props.remove(props.id)} content= 'Delete Card' primary style={{position: 'absolute', bottom: '5px', left: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
+      <Button as={Link}to={props.route2} onClick = {props.onClick2} content= 'Cancel Delete' primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
     </Card>
   );
 }

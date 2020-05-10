@@ -23,7 +23,7 @@ const HomepageHeading = ({ mobile }) => (
     <Header
       as='h1'
       content='FlashCard App'
-      inverted
+      // inverted
 
       style={{
         fontSize: mobile ? '2em' : '4em',
@@ -70,9 +70,9 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            inverted
+            // inverted
             textAlign='center'
-            style={{ minHeight: 50, padding: '1em 0em' }}
+            style={{ minHeight: 50, padding: '1em 0em', backgroundColor: 'black' }}
             vertical
           >
             <Menu

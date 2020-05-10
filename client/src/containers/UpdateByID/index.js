@@ -70,7 +70,6 @@ class UpdateByID extends Component {
 
   }
   render() {
-    console.log(this.props.match.params.flashId);
     return (
       <Wrapper>
         {/* <h1 className="title">Friends List</h1> */}

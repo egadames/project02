@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import NewCard from '../../../public/NewCard/index';
+import Card from '../../components/Card';
 import { Link } from 'react-router-dom';
 import Wrapper from '../../components/Wrapper';
-import { Form, Button, Icon } from 'semantic-ui-react';
+import { Form, Button, Icon,Container } from 'semantic-ui-react';
 
 class NewFlashCard extends Component {
   state = {
@@ -11,15 +11,15 @@ class NewFlashCard extends Component {
     questionText: '',
     answerText: ''
   }
-  // async componentDidMount() {
-  //   console.log("Inside componentDidMount");
-  //   try {
-  //     const { data } = await axios.get(`/api/flashcard/`);
-  //     this.setState({ flashCard: data });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }  
+  async componentDidMount() {
+    console.log("Inside componentDidMount");
+    try {
+      const { data } = await axios.get(`/api/flashcard/`);
+      this.setState({ flashCard: data });
+    } catch (e) {
+      console.log(e);
+    }
+  }  
   handleInputChange = event => {
     const { value, name } = event.target;
     this.setState({ [name]: value });
@@ -29,18 +29,31 @@ class NewFlashCard extends Component {
     try {
       const { data } = await axios.post('/api/flashcard', {question: `${this.state.questionText}`, answer: `${this.state.answerText}`});
       const flashCard = [...this.state.flashCard, data];
-      console.log(data)
     } catch (e) {
       console.log(e);
     }
   }
 
+  renderCards = () => {
+    if (this.state.flashCard.length === 0) {
+      return <p>You're a loner</p>
+    } else {
+      return this.state.flashCard.map(card => {
+        return <Card.CardForm
+          id = {card.id}
+          key = {card.id}
+          question = {card.question}
+          answer = {card.answer}
+          />
+      })
+    }
+  }
   renderForm = () => {
     return (
-      <div>
+      <Container style={{ height: '50vh' }}>
         <Form>
           <Form.Field>
-            <label>Enter New Question</label>
+            <label style={{color: 'white'}}>Enter New Question</label>
             <input 
             style = {{height: '20px'}}
             name = "questionText"
@@ -51,7 +64,7 @@ class NewFlashCard extends Component {
         </Form>
         <Form>
           <Form.Field >
-            <label>Enter New Answer</label>
+            <label style={{color: 'white'}}>Enter New Answer</label>
             <input 
             style = {{height: '20px'}}
             name = "answerText"
@@ -78,21 +91,19 @@ class NewFlashCard extends Component {
       </Button>
       </Link>
       </span>
-    </div>
+    </Container>
   );
 }
 
   render() {
     return (
-      // if()
       <Wrapper>
-        {/* <h1 className="title">Friends List</h1> */}
         { this.renderForm() }
+        { this.renderCards() }
+
       </Wrapper>
     );
   }
 }
-
-
 
 export default NewFlashCard;

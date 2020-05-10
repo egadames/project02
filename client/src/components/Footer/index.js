@@ -24,7 +24,6 @@ const Footer = () => (
                 <List.Item as={Link} to = '/review'>Review</List.Item>
               </List>
             </Grid.Column>
-
           </Grid.Row>
         </Grid>
       </Container>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
-import { Input, Form } from 'semantic-ui-react';
+// import { Link, Route } from 'react-router-dom';
+import { Form } from 'semantic-ui-react';
+
+// import { Input, Form, Button, Header, Image, Modal } from 'semantic-ui-react';
 import axios from 'axios';
-import Card from '../../components/Card'
 import Wrapper from '../../components/Wrapper';
 import FlashCard from '../FlashCardByID';
 
@@ -12,7 +13,7 @@ class Quiz extends Component {
       currentIndex: 0,
       currentCard: '',
       totalCards: "",
-      correctCount: 0,
+      correctCount: 1,
       answerText: ''
     }
   
@@ -26,23 +27,21 @@ class Quiz extends Component {
     }
   }  
 
-  finalScreen = () => {
-    let { currentIndex, currentCard, flashCard, totalCards } = this.state;
-  }
-
   handleNext = () => {
-    let { currentIndex, currentCard, flashCard, totalCards } = this.state;
+    let { currentIndex, flashCard, totalCards, correctCount } = this.state;
     let newIndex = currentIndex + 1;
-    console.log(totalCards)
+    // console.log(totalCards)
     if (newIndex > totalCards - 1) {
-      // handleLast();
+
       return;
+
+      // <Route path= {`{/final/${correctCount}`} />
     }
     this.setState({currentIndex: newIndex, currentCard: flashCard[newIndex] });
   }
 
   handlePrevious = () => {
-    let { currentIndex,currentCard, flashCard } = this.state;
+    let { currentIndex, flashCard } = this.state;
     let newIndex = currentIndex - 1;
     if (newIndex < 0) {
       return;
@@ -50,9 +49,9 @@ class Quiz extends Component {
     this.setState({currentIndex: newIndex, currentCard: flashCard[newIndex] });
   }
 
-  handleLast = () => {
-    let { totalCards, correctCount } = this.state;
-  }
+  // handleLast = () => {
+  //   let { totalCards, correctCount } = this.state;
+  // }
 
   render() {
     return (

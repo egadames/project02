@@ -1,24 +1,24 @@
 import React from 'react';
 import { Button, Grid, Container} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import "./style.css";
 
 const RenderStartPage = (props) => {
   return(
 
-<Container >
-  <Grid textAlign='center' style={{ height: '50vh'}} verticalAlign='middle'>
-    <Grid.Row columns={3}>
+<Container style = {{backgroundColor: 'black'}}>
+  <Grid textAlign='center' style={{ height: '50vh', backgroundColor: 'black'}} verticalAlign='middle'>
+    <Grid.Row columns={2}>
       <Grid.Column >
-        <Button as={Link} to='/flashcard' size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh', lineHeight: 'normal'}}> View All Cards</Button>
+        <Button as={Link} to='/flashcard' size = {'massive'} style={{ backgroundColor: 'blue', color: 'black', height: '20vh', width: '50vh', lineHeight: 'normal'}}> View All Cards</Button>
       </Grid.Column>
       <Grid.Column 
         >
-        <Button as={Link} to='/add' size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh', }}> Add a Flash Card</Button>        
+        <Button as={Link} to='/add' size = {'massive'} style={{ backgroundColor: 'blue', color: 'black', height: '20vh', width: '50vh', }}> Add a Flash Card</Button>        
       </Grid.Column>
       <Grid.Column 
        >
-        <Button as={Link} to={`/review`} size = {'massive'} style={{ backgroundColor: 'red', color: 'black', height: '20vh', width: '50vh'}} > Review Quiz</Button>
+        <Button as={Link} to={`/review`} size = {'massive'} style={{ backgroundColor: 'blue', color: 'black', height: '20vh', width: '50vh'}} > Review Quiz</Button>
       </Grid.Column>
     </Grid.Row>
 

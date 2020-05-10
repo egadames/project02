@@ -10,8 +10,10 @@ import DeleteCard from "../../containers/DeleteCard";
 import Review from "../../containers/Review";
 import Attempts from "../Attempts";
 import Footer from "../Footer";
+import FinalScreen from '../../containers/FinalScreen'
 
 const App = () => (
+
   <Router>
     <Navbar />
     <Switch>
@@ -21,6 +23,7 @@ const App = () => (
       <Route exact path="/flashcard" component={ViewAll} />
       <Route exact path="/add" component={NewFlashCard} />
       <Route path="/review" component={Review} />
+      <Route exact path="/final/:count" component={FinalScreen} />
       <Route exact path="/update/:flashId" component={UpdateByID} />
       <Route exact path="/delete/:flashId" component={DeleteCard} />
     </Switch>
