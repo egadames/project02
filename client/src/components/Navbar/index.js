@@ -31,7 +31,7 @@ const HomepageHeading = ({ mobile }) => (
         textAlign: 'top',
         marginBottom: 0,
         marginTop: mobile ? '.25em' : '.55em',
-        color: 'blue'
+        color: '#ECEFF1'
       }}
     />
     <Header

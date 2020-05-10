@@ -11,15 +11,15 @@ class NewFlashCard extends Component {
     questionText: '',
     answerText: ''
   }
-  async componentDidMount() {
-    console.log("Inside componentDidMount");
-    try {
-      const { data } = await axios.get(`/api/flashcard/`);
-      this.setState({ flashCard: data });
-    } catch (e) {
-      console.log(e);
-    }
-  }  
+  // async componentDidMount() {
+  //   console.log("Inside componentDidMount");
+  //   try {
+  //     const { data } = await axios.get(`/api/flashcard/`);
+  //     this.setState({ flashCard: data });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }  
   handleInputChange = event => {
     const { value, name } = event.target;
     this.setState({ [name]: value });
