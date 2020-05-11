@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Card from '../../components/Card/';
 import Wrapper from '../../components/Wrapper';
 
@@ -10,14 +10,14 @@ class FlashCardByID extends Component {
       answer: ''
     }
   }
-  async componentDidMount() {
-    try {
-      const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
-      this.setState({ flashCard: data });
-    } catch (e) {
-      console.log(e);
-    }
-  }  
+  // async componentDidMount() {
+  //   try {
+  //     const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
+  //     this.setState({ flashCard: data });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }  
   
   renderCard = (id) => {
     return (

@@ -4,7 +4,6 @@ import Card from '../../components/Card';
 import Wrapper from '../../components/Wrapper';
 import { Form } from 'semantic-ui-react';
 
-
 class UpdateByID extends Component {
   state = {
     flashCard: [],

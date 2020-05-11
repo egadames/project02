@@ -7,7 +7,7 @@ const RenderStartPage = (props) => {
   return(
 <Container style = {{backgroundColor: 'black'}}>
   <Grid textAlign='center' style={{ height: '50vh', backgroundColor: 'black'}} verticalAlign='middle'>
-    <Grid.Row columns={3}>
+    <Grid.Row columns={2}>
       <Grid.Column >
         <Button as={Link} to='/flashcard' size = {'massive'} primary style={{ color: 'black', height: '20vh', width: '50vh', lineHeight: 'normal'}}> View All Cards</Button>
       </Grid.Column>

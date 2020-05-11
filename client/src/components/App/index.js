@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/update/:flashId" component={UpdateByID} />
       <Route exact path="/delete/:flashId" component={DeleteCard} />
     </Switch>
-    {/* <Footer/> */}
+    <Footer/>
   </Router>
 );
 export default App;

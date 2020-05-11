@@ -129,7 +129,7 @@ class MobileContainer extends Component {
                 <Menu.Item as={Link} to = '/review'>Review</Menu.Item>
         </Sidebar>
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Segment floated
+          <Segment  
             inverted
             textAlign='center'
             style={{ minHeight: 100, padding: '1em 0em' }}

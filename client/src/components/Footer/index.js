@@ -14,7 +14,7 @@ const Footer = () => (
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={16}>
+            <Grid.Column width={2}>
               <Header inverted as='h4' content='Sitemap' />
               <List link inverted>
                 <List.Item as={Link} to = '/' >Start Page</List.Item>
