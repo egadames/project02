@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Container,
@@ -10,8 +10,7 @@ import {
 
 const Footer = () => (
   <div>
-
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
+    <Segment inverted vertical style={{ padding: '3em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>

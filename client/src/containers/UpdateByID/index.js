@@ -45,7 +45,7 @@ class UpdateByID extends Component {
       />
   <Form>
     <Form.Field>
-      <label>Updated Question</label>
+      <label style ={{color: 'white'}}>Updated Question</label>
       <input 
       style = {{height: '10px', border: 'solid black'}}
       name = "questionText"
@@ -56,12 +56,14 @@ class UpdateByID extends Component {
   </Form>
   <Form >
     <Form.Field >
-      <label>Updated Answer</label>
+      <label style ={{color: 'white'}}>Updated Answer</label>
       <input 
       style = {{height: '10px', border: 'solid black'}}
       name = "answerText"
       value = {this.state.answerText}
       onChange = {this.handleInputChange}
+      placeholder="Enter Your Answer Here"
+
       />
     </Form.Field>
   </Form>

@@ -11,7 +11,6 @@ class FlashCardByID extends Component {
     }
   }
   async componentDidMount() {
-    console.log("Inside componentDidMount");
     try {
       const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
       this.setState({ flashCard: data });
@@ -19,19 +18,6 @@ class FlashCardByID extends Component {
       console.log(e);
     }
   }  
-
-  // async componentDidUpdate(prevProps) {
-  //   console.log('prevProps', prevProps);
-  //   console.log(this.props);
-  //   if (prevProps.match.params.flashId !== this.props.match.params.flashId) {
-  //     try {
-  //       const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
-  //       this.setState({ flashCard: data });
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   }
-  // }
   
   renderCard = (id) => {
     return (
@@ -39,16 +25,18 @@ class FlashCardByID extends Component {
         id = {this.props.flashCard.id}
         question = {this.props.flashCard.question}
         answer = {this.props.flashCard.answer}
+        answerText = {this.props.answerText}
+        handleInputChange = {this.props.handleInputChange}
       />
     );
 
   }
   render() {
-    console.log(this.props);
     return (
       <Wrapper>
         { this.renderCard() }
       </Wrapper>
+      
     );
   }
 }

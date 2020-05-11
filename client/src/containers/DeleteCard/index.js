@@ -9,7 +9,6 @@ class DeleteCard extends Component {
   }
 
   async componentDidMount() {
-    console.log("Inside componentDidMount");
     try {
       const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
       console.log(data)
@@ -23,6 +22,7 @@ class DeleteCard extends Component {
     try {
       const { data: flashCard } = await axios.delete(`/api/flashcard/${this.props.match.params.flashId}`);
       this.setState({ flashCard });
+      this.props.history.push(`/flashcard`);
     } catch (e) {
       console.log(e);
     }
