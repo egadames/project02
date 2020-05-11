@@ -63,9 +63,11 @@ class Quiz extends Component {
     let { currentCard, answerText } = this.state;
     let guessAttempts = 0;
     if (currentCard.answer === answerText && guessAttempts === 0) {
-      this.setState({ correctCount: this.state.correctCount + 1, answerText: '' });
+      this.setState({ correctCount: this.state.correctCount + 1});
       guessAttempts++;
     }
+    this.setState({ answerText: '' });
+
   };
 
   render() {
