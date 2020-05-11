@@ -11,10 +11,10 @@ class UpdateByID extends Component {
     answerText: ''
   }
   async componentDidMount() {
-    console.log("Inside componentDidMount");
     try {
       const { data } = await axios.get(`/api/flashcard/${this.props.match.params.flashId}`);
       this.setState({ flashCard: data });
+      
     } catch (e) {
       console.log(e);
     }
@@ -27,7 +27,7 @@ class UpdateByID extends Component {
   handleUpdate = async id => {
     try {
       const { data: flashCard } = await axios.patch(`/api/flashcard/${this.props.match.params.flashId}`, {question: `${this.state.questionText}`, answer: `${this.state.answerText}`});
-      this.setState({ flashCard });
+      this.setState({ flashCard, questionText: '', answerText: '' });
     } catch (e) {
       console.log(e);
     }
@@ -62,7 +62,6 @@ class UpdateByID extends Component {
       value = {this.state.answerText}
       onChange = {this.handleInputChange}
       placeholder="Enter Your Answer Here"
-
       />
     </Form.Field>
   </Form>
@@ -73,7 +72,6 @@ class UpdateByID extends Component {
   render() {
     return (
       <Wrapper>
-        {/* <h1 className="title">Friends List</h1> */}
         { this.renderCard() }
       </Wrapper>
     );

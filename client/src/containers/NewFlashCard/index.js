@@ -41,6 +41,7 @@ class NewFlashCard extends Component {
         answer: `${this.state.answerText}`,
       });
       const flashCard = [...this.state.flashCard, data];
+      this.setState({ questionText: '', answerText: '' })
       this.props.history.push(`/flashcard`);
     } catch (e) {
       console.log(e);

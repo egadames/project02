@@ -14,12 +14,10 @@ class GetAll extends Component {
     flashCard: []
   }
   async componentDidMount() {
-    console.log("Inside componentDidMount");
     try {
       const { data } = await axios.get('/api/flashcard');
       this.setState({ flashCard: data });
 
-      // localStorage.setItem('flashCardId', data[0].id);
     } catch (e) {
       console.log(e);
     }
@@ -48,7 +46,7 @@ class GetAll extends Component {
   render() {
     return (
       <Wrapper>
-        <title className="title">Flash Cards</title>
+        {/* <title className="title">Flash Cards</title> */}
         { this.renderCards() }
       </Wrapper>
     );

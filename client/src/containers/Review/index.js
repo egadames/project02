@@ -41,7 +41,7 @@ class Quiz extends Component {
     if (newIndex > totalCards - 1) {
       this.props.history.push(`/final/${correctCount}`);
     }
-    this.setState({ currentIndex: newIndex, currentCard: flashCard[newIndex] });
+    this.setState({ currentIndex: newIndex, currentCard: flashCard[newIndex],  });
   };
 
   handlePrevious = () => {
@@ -50,7 +50,7 @@ class Quiz extends Component {
     if (newIndex < 0) {
       return;
     }
-    this.setState({ currentIndex: newIndex, currentCard: flashCard[newIndex] });
+    this.setState({ currentIndex: newIndex, currentCard: flashCard[newIndex]});
   };
 
   handleInputChange = (event) => {
@@ -63,7 +63,7 @@ class Quiz extends Component {
     let { currentCard, answerText } = this.state;
     let guessAttempts = 0;
     if (currentCard.answer === answerText && guessAttempts === 0) {
-      this.setState({ correctCount: this.state.correctCount + 1 });
+      this.setState({ correctCount: this.state.correctCount + 1, answerText: '' });
       guessAttempts++;
     }
   };
