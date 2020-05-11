@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Card from '../../components/Card'
 import Wrapper from '../../components/Wrapper';
+import {
+  Dimmer,
+  Loader,
+  Image,
+  Segment,
+} from "semantic-ui-react";
 
 class GetAll extends Component {
   state = {
@@ -20,7 +26,14 @@ class GetAll extends Component {
   }  
   renderCards = () => {
     if (this.state.flashCard.length === 0) {
-      return <p>You're a loner</p>
+      return(
+      <Segment>
+      <Dimmer active>
+        <Loader />
+      </Dimmer>
+      <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
+    </Segment>
+  );
     } else {
       return this.state.flashCard.map(card => {
         return <Card.CardForm

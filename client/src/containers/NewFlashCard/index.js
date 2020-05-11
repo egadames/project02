@@ -41,6 +41,7 @@ class NewFlashCard extends Component {
         answer: `${this.state.answerText}`,
       });
       const flashCard = [...this.state.flashCard, data];
+      this.props.history.push(`/flashcard`);
     } catch (e) {
       console.log(e);
     }
@@ -95,14 +96,12 @@ class NewFlashCard extends Component {
           </Form.Field>
         </Form>
         <span>
-          <Link to="/flashcard">
             <Button animated onClick={(e) => this.handleAdd(e)}>
               <Button.Content visible>Submit</Button.Content>
               <Button.Content hidden>
                 <Icon name="checkmark" />
               </Button.Content>
             </Button>
-          </Link>
           <Link to="/">
             <Button animated>
               <Button.Content visible>Cancel</Button.Content>

@@ -29,7 +29,7 @@ const editCard = (props) => {
       <Card.Content header={`Flashcard # ${props.id}`} style ={{position: 'absolute', right: '35%'}}/>
       <Card.Content description={`Question: ${props.question}`} style ={{position: 'absolute', top: '54px'}}/>
       <Card.Content description={`Answer: ${props.answer}`} style ={{position: 'absolute', top:'124px'}}/>
-      <Button as={Link}to={`/review`} content= 'Update' primary style={{position: 'absolute', bottom: '5px', left: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
+      <Button onClick = {() => props.handleUpdate(props.id)} content= 'Update' primary style={{position: 'absolute', bottom: '5px', left: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
       <Button as={Link}to={`/`} content= 'Cancel' primary style={{position: 'absolute', bottom: '5px', right: '5%', width: '150px',height: '50px', lineHeight: 'normal'}}/>
     </Card>
   );
