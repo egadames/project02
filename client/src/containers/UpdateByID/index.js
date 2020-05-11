@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import EditCard from '../../components/EditCard';
+import Card from '../../components/Card';
 import Wrapper from '../../components/Wrapper';
 import { Form } from 'semantic-ui-react';
 
@@ -21,10 +21,7 @@ class UpdateByID extends Component {
     }
   }  
   handleInputChange = event => {
-    console.log(event)
     const { value, name } = event.target;
-    console.log(value)
-    console.log(name)
     this.setState({ [name]: value });
   }
 
@@ -40,21 +37,17 @@ class UpdateByID extends Component {
   renderCard = (id) => {
     return (
       <div>
-      <EditCard
+      <Card.editCard
         id = {this.state.flashCard.id}
         question = {this.state.flashCard.question}
         answer = {this.state.flashCard.answer}
-        name = ""
-        value = {this.state.questionText}
-        onChange = {this.handleInputChange}
-  
-        handleUpdate={this.handleUpdate}
+        onClicks = {this.handleUpdate}
       />
   <Form>
     <Form.Field>
       <label>Updated Question</label>
       <input 
-      style = {{height: '20px'}}
+      style = {{height: '10px', border: 'solid black'}}
       name = "questionText"
       value = {this.state.questionText}
       onChange = {this.handleInputChange}
@@ -65,7 +58,7 @@ class UpdateByID extends Component {
     <Form.Field >
       <label>Updated Answer</label>
       <input 
-      style = {{height: '20px'}}
+      style = {{height: '10px', border: 'solid black'}}
       name = "answerText"
       value = {this.state.answerText}
       onChange = {this.handleInputChange}
