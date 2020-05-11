@@ -40,7 +40,7 @@ class UpdateByID extends Component {
         id = {this.state.flashCard.id}
         question = {this.state.flashCard.question}
         answer = {this.state.flashCard.answer}
-        onClicks = {this.handleUpdate}
+        handleUpdate = {this.handleUpdate}
       />
   <Form>
     <Form.Field>
