@@ -74,38 +74,30 @@ class Quiz extends Component {
     return (
       <Container>
         <Grid>
-          <GridRow columns={2} divided>
+          <GridRow  divided>
             <GridColumn></GridColumn>
           </GridRow>
         </Grid>
         <Grid >
-          <GridRow>
-            <GridColumn>
-              <Wrapper>
-                <Button
-                  float={"right"}
-                  style={{ width: "100px" }}
-                  primary
-                  onClick={this.handlePrevious}
-                >
-                  Previous{" "}
-                </Button>
-                <FlashCard
-                  style={{ zIndex: 0 }}
-                  flashCard={this.state.currentCard}
-                  name={"answerText"}
-                  answerText={this.state.answerText}
-                  onChange={this.handleInputChange}
-                />
-                <Button
-                  style={{ width: "100px" }}
-                  primary
-                  onClick={this.handleNext}
-                >
-                  Next
-                </Button>
-              </Wrapper>
-            </GridColumn>
+          <GridRow centered={true}>
+            <Button
+              float={"right"}
+              style={{ width: "100px"}}
+              primary
+              onClick={this.handlePrevious}
+            >
+              Previous
+            </Button>
+            <FlashCard
+              flashCard={this.state.currentCard}
+            />
+            <Button
+              style={{ width: "100px" }}
+              primary
+              onClick={this.handleNext}
+            >
+              Next
+            </Button>
           </GridRow>
         </Grid>
         <Grid >
@@ -116,10 +108,7 @@ class Quiz extends Component {
                   style={{
                     backgroundColor: "white",
                     color: "black",
-                    position: "absolute",
-                    bottom: "17%",
-                    right: "42%",
-                    width: "300px",
+                    width: "80%",
                     height: "50px",
                     border: "solid black",
                   }}
@@ -133,9 +122,9 @@ class Quiz extends Component {
                   onClick={this.handleAttempt}
                   style={{
                     color: "black",
-                    position: "absolute",
-                    bottom: "19px",
-                    right: "350px",
+                    // position: "absolute",
+                    // bottom: "19px",
+                    right: "40%",
                     width: "100px",
                     height: "50px",
                     border: "solid black",

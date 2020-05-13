@@ -21,7 +21,7 @@ class GetAll extends Component {
     } catch (e) {
       console.log(e);
     }
-  }  
+  }
   renderCards = () => {
     if (this.state.flashCard.length === 0) {
       return(
@@ -46,7 +46,7 @@ class GetAll extends Component {
   render() {
     return (
       <Wrapper>
-        {/* <title className="title">Flash Cards</title> */}
+
         { this.renderCards() }
       </Wrapper>
     );

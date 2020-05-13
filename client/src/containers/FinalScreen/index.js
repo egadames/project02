@@ -24,10 +24,10 @@ class UpdateByID extends Component {
     let grade =
       numberCorrect === 0
         ? 0
-        : parseFloat(numberCorrect / totalCards).toFixed(3);
+        : parseFloat((numberCorrect / totalCards) * 100).toFixed(3);
     return (
       <Modal
-        style={{ height: "38%" }}
+        style={{ height: "300px" }}
         size={"tiny"}
         open={true}
         centered={false}

@@ -5,22 +5,17 @@ import "./style.css";
 
 const RenderStartPage = (props) => {
   return(
-<Container style = {{backgroundColor: 'black'}}>
-  <Grid textAlign='center' style={{ height: '50vh', backgroundColor: 'black'}} verticalAlign='middle'>
-    <Grid.Row columns={2}>
-      <Grid.Column >
-        <Button as={Link} to='/flashcard' size = {'massive'} primary style={{ color: 'black', height: '20vh', width: '50vh', lineHeight: 'normal'}}> View All Cards</Button>
+  <Container textAlign='center' style = {{ margin: "25vh", height: '60vh', width: '100vh'}}>
+    <Grid>
+      <Grid.Column mobile = {16} >
+        <Button as={Link} to='/flashcard' size = {'massive'} primary style={{ color: 'black', width: '50vh'}}> View All Cards</Button>
       </Grid.Column>
-      <Grid.Column 
-        >
-        <Button as={Link} to='/add' size = {'massive'} primary style={{ color: 'black', height: '20vh', width: '50vh', }}> Add a Flash Card</Button>        
+      <Grid.Column mobile = {16}>
+        <Button as={Link} to='/add' size = {'massive'} primary style={{ color: 'black',width: '50vh'}}> Add a FlashCard</Button>        
       </Grid.Column>
-      <Grid.Column 
-       >
-        <Button as={Link} to={`/review`} size = {'massive'} primary style={{ color: 'black', height: '20vh', width: '50vh'}} > Review Quiz</Button>
+      <Grid.Column mobile = {16}>
+        <Button as={Link} to={`/review`} size = {'massive'} primary style={{ color: 'black', width: '50vh'}} > Review Quiz</Button>
       </Grid.Column>
-    </Grid.Row>
-
   </Grid>
   </Container>
   );

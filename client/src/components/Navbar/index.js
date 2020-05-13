@@ -136,7 +136,7 @@ class MobileContainer extends Component {
             vertical
           >
             <Container>
-              <Menu inverted pointing secondary size='large'>
+              <Menu pointing secondary size='large'>
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name='sidebar' />
                 </Menu.Item>
