@@ -43,7 +43,7 @@ class DeleteCard extends Component {
   render() {
     console.log(this.props.match.params.flashId);
     return (
-      <Wrapper style={{height: '50vh'}}>
+      <Wrapper style={{height: '70vh'}}>
         { this.renderCard() }
       </Wrapper>
     );
