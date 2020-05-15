@@ -10,50 +10,88 @@ This is the link to the live website:
 
 https://guarded-escarpment-04692.herokuapp.com/
 
-###Project Planning: 
-Our website is the most convenient way to search events going on near you!
-browse restaurants, bars, movies, concerts, and outdoor options all within your zip code or surrounding area. save the ones you are interested in and start building your excursion itinerary. 
+### Website Concept: 
+Our website is a better way to learn!
+The app is way to create, edit, delete and review flashcards for studying.
 
-### App's Concept: 
-We created our site to make it easy to planning outings,
-figure out where to eat, or just find a reason to get out of the house and have some fun.
 ### Process:  
-What were the technologies used? 
-            we utilized multiple API to source our calendar events and populate our site along with allowing us to append events to a calendar
-            
-How were tasks and roles broken down and assigned? 
-            we each will take charge of an event genre to start ex: food or movies or trails etc.
-            
-What challenges did you encounter? 
+
+What challenges did you encounter?
+  * The challenges arose from the modulization of various components and containers. Often different containers needed to access other states that were not in the same container. The challenge was to make the code modulized while still not putting the state at the top level. 
+
 What were your successes?
-### Libraries used:
-- jQuery
-- APIs
-- HTML
-- JavaScript
-- Bootstrap CSS
-### User Input Page
-1. This will load a modal or form that will contain inputs to get information from the user.
-2. for the MVP, we shall obtain the location and the date from the user.
-3. Validate the user's response will be accepted by APIs and if not require them to complete it collected
+  * The main issue about s
+
+### What were the technologies used? 
+  * MySQL
+  * Heroku for the domain
+  * JawsDB MySql
+  * HTML
+  * JavaScript
+  * React
+  * Semantic UI CSS
+
+### Start Page
+  * This will load a starting page that contains a navbar, footer and buttons that will send you to the various features of the app.
+  * There are 3 buttons on the startpage. They are links to GetAll Flashcards feature, Create a New Flashcard feature and take a review quiz feature.
+  * The navbar and footer have access to the same links.
+
+### Get All Cards Feature
+  * This page is a new page that contains a navbar, footer and all the flashcard currently loaded into the database.
+  * The navbar and footer have links to all the other pages on the website.
+  * The flashcard will have the question and answer for each flashcard and also the flashcard number as the header.
+  * The cards contain 2 buttons that are links to other features of the flashcard app. 
+  * The left button takes you to the update a flashcard feature of the app.
+  * the right button takes you to the delete a flashcard feature of the app.
+
+### Update a Flashcard Feature
+  * This page is a new page that contains a navbar, footer and the flashcard that was selected to be updated. There are also 2 input bars on the page. 
+  * The navbar and footer have links to all the other pages on the website.
+  * There are 2 inputs boxes on the page. One for updating a question and the other for updating an answer.
+  * The flashcard will have the question and answer for that paticular flashcard and also the flashcard number as the header.
+  * The cards contain 2 buttons that will confirm the updates and the other will be to cancel the update. 
+  * The left button is used to confirm the updates and once the button is pressed the updates will replace the current on the flashcard loaded on the page.
+  * the right button is there are no changes and once pressed will take you back to the startpage.
+
+### Delete a Flashcard Feature
+  * This page is a new page that contains a navbar, footer and the flashcard that was selected to be deleted. 
+  * The navbar and footer have links to all the other pages on the website.
+  * The flashcard will have the question and answer for that paticular flashcard and also the flashcard number as the header.
+  * The cards contain 2 buttons that will confirm the deletion and the other will be to cancel the deletion. 
+  * The left button is used to confirm the deletion and once the button is pressed. The flashcard will be deleted from the database and the user is routed to the view all page to show the flashcard is deleted.
+  * the right button is used when the user changes their mind and once pressed will take you back to the startpage.
+
+### Add a Flashcard Feature
+  * This page is a new page that contains a navbar, footer, 2 input bars on the page with 2 buttons, and also all the flashcards in the database. 
+  * The navbar and footer have links to all the other pages on the website.
+  * ALl the flashcards are loaded to allow the user to easily confirm there is no duplicate flashcards being created.
+  * There are 2 inputs boxes on the page. One for adding a question and the other for adding an answer.
+  * Once the user enters the information into the input fields and the submit button is pressed. The new flashcard is created. 
+  * After the submit button is pressed, the flashcard is created and theuser is routed to the view all page where they can see the newly added card.
+  * the cancel button once pressed will take you back to the startpage.
+
+### Review Flashcard feature
+  * This page is a new page that contains a navbar, footer, 1 input bar with a submit buttons, a flashcard starting from the first in the database and 2 navigation buttons. 
+  * The navbar and footer have links to all the other pages on the website.
+  * The flashcards are loaded one at a time starting with the first flashcard in the database. The flashcard only contains the question and no answer.
+  * Below the flashcard, there is an input box for the user to submit an answer. The user is only allowed to submit once and on their submission there response is checked against and there correct count is updated accordingly. 
+  * There are 2 navigation buttons on either side of the flashcars and this allows users to cycle through the cards in the database to perform the quiz. 
+  * If the user attempts to go back before the first card, nothing occurs.
+  * If the user reaches the last card and the next button is pressed. THis action takes the user to the final screen where a modal appears telling them their number correct and their percentage correct.
+  * On this model, there are 2 buttons that will send the user to the startpage or allow the user to redo the quiz.
+
 ### Additional Features
-1. get location automatically from user as the first check if not they are allowed to enter into an input box.
-2. give more search options such as type of food, type of events and type of outdoor activity
-### Results Page
-1. This page will be created based on the user response.
-2. This page will contain a header and 3 rows of activities for the user to select. Each row will contain 3 options from each API. Each activity will be a button that will accessed in the JS and added to favorites or calendar
-3. One row will contain information from the Ticketmaster or BandsinTown API that will contain concerts or events occurring near the user provided location.
-   a) This information will contain the title of the band or event, location and time as well as price.
-4. Another row will contain movies that will happen near the user. 
-     a) This information will contain the title of the movie, location and time. If possible, the cost.
-5. Another row will contain either restaurants or outdoor options near the user
-### Additional Features
-1. There will be a sidebar that will contain the user's favorite's choices
-2. There will be a button that will allow the user to load the events into a calendar.
+  * There will be an additional feature that allows the user to create different flashcard stacks. Currently all the flashcards are grouped together so if there are different subjects there will be no way to only study a certain subject.
+  * There will be a more advanced version of the quiz that incoroprates True or False questions and also multiple choice.
 
-### Screenshots
+### Screenshot
 
 
+![app start page](https://github.com/egadames/project02/blob/master/client/src/asset/startPage.JPG)
+![app view all](https://github.com/egadames/project02/blob/master/client/src/asset/viewAll.JPG)
+![app update](https://github.com/egadames/project02/blob/master/client/src/asset/update.JPG)
+![app delete](https://github.com/egadames/project02/blob/master/client/src/asset/delete.JPG)
+![app create](https://github.com/egadames/project02/blob/master/client/src/asset/create.JPG)
+![app review](https://github.com/egadames/project02/blob/master/client/src/asset/review.JPG)
+![app final screen](https://github.com/egadames/project02/blob/master/client/src/asset/finalScreen.JPG)
 
-![First Row](./assets/Img/Screenshot_first_row.JPG)
-![First Row](./assets/Img/Screenshot_last_rows.JPG)
