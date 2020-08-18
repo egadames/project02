@@ -5,11 +5,11 @@
 ### Location of URLs
 This is the link to the github repo:
 
-https://github.com/egadames/flashCardApp/
+  * https://github.com/egadames/flashCardApp/
 
 This is the link to the live website:
 
-https://guarded-escarpment-04692.herokuapp.com/
+  * https://guarded-escarpment-04692.herokuapp.com/
 
 ### Website Concept: 
 Our website is a better way to learn!
