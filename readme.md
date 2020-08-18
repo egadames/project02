@@ -1,10 +1,11 @@
-### Team: 
-Sin Cho Chan, Erik Adames, David Hughey and Adeola Afariogun
+# Flash Card App
+
+  * Created by Erik Adames
 
 ### Location of URLs
 This is the link to the github repo:
 
-https://github.com/egadames/project02
+https://github.com/egadames/flashCardApp/
 
 This is the link to the live website:
 
@@ -13,14 +14,7 @@ https://guarded-escarpment-04692.herokuapp.com/
 ### Website Concept: 
 Our website is a better way to learn!
 The app is way to create, edit, delete and review flashcards for studying.
-
-### Process:  
-
-What challenges did you encounter?
-  * The challenges arose from the modulization of various components and containers. Often different containers needed to access other states that were not in the same container. The challenge was to make the code modulized while still not putting the state at the top level. 
-
-What were your successes?
-  * The main issue about s
+This app will make it easier for people to study and learn.
 
 ### What were the technologies used? 
   * MySQL
@@ -80,12 +74,7 @@ What were your successes?
   * If the user reaches the last card and the next button is pressed. THis action takes the user to the final screen where a modal appears telling them their number correct and their percentage correct.
   * On this model, there are 2 buttons that will send the user to the startpage or allow the user to redo the quiz.
 
-### Additional Features
-  * There will be an additional feature that allows the user to create different flashcard stacks. Currently all the flashcards are grouped together so if there are different subjects there will be no way to only study a certain subject.
-  * There will be a more advanced version of the quiz that incoroprates True or False questions and also multiple choice.
-
 ### Screenshot
-
 
 ![app start page](https://github.com/egadames/project02/blob/master/client/src/asset/startPage.JPG)
 ![app view all](https://github.com/egadames/project02/blob/master/client/src/asset/viewAll.JPG)
