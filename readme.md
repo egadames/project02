@@ -1,20 +1,18 @@
-# Flash Card App
-
-  * Created by Erik Adames
+### Flash Card App
+* created by Erik Adames
 
 ### Location of URLs
 This is the link to the github repo:
 
-  * https://github.com/egadames/flashCardApp/
+ * https://github.com/egadames/flashCardApp
 
 This is the link to the live website:
 
-  * https://guarded-escarpment-04692.herokuapp.com/
+ * https://guarded-escarpment-04692.herokuapp.com/
 
 ### Website Concept: 
 Our website is a better way to learn!
 The app is way to create, edit, delete and review flashcards for studying.
-This app will make it easier for people to study and learn.
 
 ### What were the technologies used? 
   * MySQL
@@ -24,6 +22,8 @@ This app will make it easier for people to study and learn.
   * JavaScript
   * React
   * Semantic UI CSS
+
+### How to use the Site
 
 ### Start Page
   * This will load a starting page that contains a navbar, footer and buttons that will send you to the various features of the app.
@@ -83,4 +83,5 @@ This app will make it easier for people to study and learn.
 ![app create](https://github.com/egadames/project02/blob/master/client/src/asset/create.JPG)
 ![app review](https://github.com/egadames/project02/blob/master/client/src/asset/review.JPG)
 ![app final screen](https://github.com/egadames/project02/blob/master/client/src/asset/finalScreen.JPG)
+
 
